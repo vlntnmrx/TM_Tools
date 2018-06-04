@@ -17,6 +17,12 @@ public abstract class form {
     double sp_x; //Schwerpunktkoordinate x
     double sp_y; // '' für y
 
+    double i_x; //Flächenträgheitsmomente
+    double i_y;
+    
+    double w_x; //Widerstandsmomente
+    double w_y;
+    
     double area;
 
     /**
@@ -32,7 +38,7 @@ public abstract class form {
      *
      * @return
      */
-    abstract double fltm();
+    abstract void fltm();
 
     /**
      * Aktualisiert den Schwerpunkt in x und y
@@ -44,7 +50,8 @@ public abstract class form {
      *
      * @return
      */
-    double wdsm(double a_max) {
-        return fltm() / a_max;
+    void wdsm(double a_max) {
+        this.w_x = this.i_x / a_max;
+        this.w_y = this.i_y / a_max;
     }
 }

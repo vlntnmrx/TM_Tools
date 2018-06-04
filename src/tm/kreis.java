@@ -38,7 +38,7 @@ public class kreis extends form {
     }
 
     @Override
-    double fltm() {
+    void fltm() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

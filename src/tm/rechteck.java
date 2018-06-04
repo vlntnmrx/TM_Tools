@@ -40,9 +40,8 @@ public class rechteck extends form {
     }
 
     @Override
-    double fltm() {
+    void fltm() {
 
-        return 0;
     }
 
     @Override
