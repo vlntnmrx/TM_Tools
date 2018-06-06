@@ -14,15 +14,25 @@ import java.util.List;
  */
 public class composite extends form {
 
-    List<form> elements;
+    private List<form> elements;
 
     public composite() {
         elements = new ArrayList<>();
+        area();
+    }
+
+    void add(form elmt) {
+        elements.add(elmt);
     }
 
     @Override
     double area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double ar = 0;
+        for (int i = 0; i < elements.size(); i++) {
+            ar += elements.get(i).area;
+        }
+        this.area = ar;
+        return this.area;
     }
 
     @Override

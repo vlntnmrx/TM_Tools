@@ -19,15 +19,15 @@ public abstract class form {
 
     double i_x; //Flächenträgheitsmomente
     double i_y;
-    
+
     double w_x; //Widerstandsmomente
     double w_y;
-    
+
     double area;
 
     /**
-     * Berechnet die Fläche der Form neu!
-     * Sollte vor dem Zugriff auf this.area bevorzugt werden
+     * Berechnet die Fläche der Form neu! Sollte vor dem Zugriff auf this.area
+     * bevorzugt werden
      *
      * @return
      */
@@ -36,7 +36,7 @@ public abstract class form {
     /**
      * Berechnet das Flächenträgheitsmoment
      *
-     * @return
+     *
      */
     abstract void fltm();
 
@@ -44,11 +44,11 @@ public abstract class form {
      * Aktualisiert den Schwerpunkt in x und y
      */
     abstract void sp();
-    
+
     /**
      * Berechnet das Widerstandsmoment
      *
-     * @return
+     *
      */
     void wdsm(double a_max) {
         this.w_x = this.i_x / a_max;

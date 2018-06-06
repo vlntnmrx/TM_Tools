@@ -29,6 +29,8 @@ public class kreis extends form {
 
         area();
         sp();
+        fltm();
+        wdsm(2);
     }
 
     @Override
@@ -39,7 +41,8 @@ public class kreis extends form {
 
     @Override
     void fltm() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.i_x = (PI * Math.pow(r * 2, 4)) / 64;
+        this.i_y = (PI * Math.pow(r * 2, 4)) / 64;
     }
 
     @Override

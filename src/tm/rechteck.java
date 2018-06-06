@@ -11,43 +11,46 @@ package tm;
  */
 public class rechteck extends form {
 
-    double a; //Länge in x Richtung
-    double b; //Länge in y Richtung
+    double b; //Länge in x Richtung (Breite)
+    double h; //Länge in y Richtung (Höhe)
 
     /**
-     * Nimmt Länge in x (a) und y (b) Richtung sowie x und y Koordinate des
-     * linken unteren Punktes entgegen
+     * Nimmt Länge in x (breite) und y (höhe) Richtung sowie x und y Koordinate
+     * des linken unteren Punktes entgegen
      *
-     * @param a
      * @param b
+     * @param h
      * @param x
      * @param y
      */
-    public rechteck(double a, double b, double x, double y) {
+    public rechteck(double b, double h, double x, double y) {
         this.pos_x = x;
         this.pos_y = y;
-        this.a = a;
         this.b = b;
+        this.h = h;
 
         area();
         sp();
+        fltm();
+        wdsm(2);
     }
 
     @Override
     double area() {
-        area = a * b;
+        area = h * b;
         return area;
     }
 
     @Override
     void fltm() {
-
+        this.i_x = (b * h * h * h) / 12;
+        this.i_y = (h * b * b * b) / 12;
     }
 
     @Override
     void sp() {
-        this.sp_x = this.pos_x + (this.a / 2);
-        this.sp_y = this.pos_y + (this.b / 2);
+        this.sp_x = this.pos_x + (this.b / 2);
+        this.sp_y = this.pos_y + (this.h / 2);
     }
 
 }
