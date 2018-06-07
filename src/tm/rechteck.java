@@ -35,8 +35,8 @@ public class rechteck extends form {
 
     @Override
     double area() {
-        area = h * b;
-        return area;
+        this.area = h * b;
+        return this.area;
     }
 
     @Override

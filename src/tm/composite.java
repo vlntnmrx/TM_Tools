@@ -53,10 +53,10 @@ public class composite extends form {
         double ix = 0, iy = 0;
 
         for (int i = 0; i < this.elements.size(); i++) {
-            ix += elements.get(i).i_x + (elements.get(i).area() * (this.elements.get(i).sp_x - this.sp_x));
+            ix += elements.get(i).i_x + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_x - this.sp_x, 2));
         }
         for (int i = 0; i < this.elements.size(); i++) {
-            iy += elements.get(i).i_y + (elements.get(i).area() * (this.elements.get(i).sp_y - this.sp_y));
+            iy += elements.get(i).i_y + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_y - this.sp_y, 2));
         }
 
         this.i_x = ix;
