@@ -19,15 +19,24 @@ public class TM {
     public static void main(String[] args) {
         composite teil = new composite();
 
-        teil.add(new rechteck(3, 1, 0, 0));
-        teil.add(new rechteck(1, 2, 1, 1));
+        teil.add(new rechteck(10, 60, 0, 0));
+        teil.add(new rechteck(60, 15, 10, 0));
+        teil.add(new rechteck(20, 75, 50, 15));
 
+        /**
+         * So sieht der T-Träger aus:
+         *    _
+         *   | |
+         *  _| |_
+         * |_____|
+         * 
+         * Ich weiß, was Du denkst und NEIN!
+         */
+        
         System.out.println("T-Träger:");
-        System.out.println("Schwerpunkt R1: (" + teil.get(0).sp_x + "|" + teil.sp_y + ")");
-        System.out.println("Schwerpunkt R2: (" + teil.get(1).sp_x + "|" + teil.sp_y + ")");
+        System.out.println("Fläche Träger: " + teil.area());
         System.out.println("Schwerpunkt: (" + teil.sp_x + "|" + teil.sp_y + ")");
         System.out.println("Flächenträgheitsmoment: (" + teil.i_x + "|" + teil.i_y + ")");
-        
 
     }
 
