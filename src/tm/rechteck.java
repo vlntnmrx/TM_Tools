@@ -28,11 +28,9 @@ public class rechteck extends form {
         this.pos_y = y;
         this.b = b;
         this.h = h;
-
-        area();
-        sp();
-        fltm();
-        wdsm(2);
+        this.a_max = 2.0;
+        
+        update();
     }
 
     @Override
@@ -43,14 +41,14 @@ public class rechteck extends form {
 
     @Override
     void fltm() {
-        this.i_x = (b * h * h * h) / 12;
-        this.i_y = (h * b * b * b) / 12;
+        this.i_x = (b * h * h * h) / 12.0;
+        this.i_y = (h * b * b * b) / 12.0;
     }
 
     @Override
     void sp() {
-        this.sp_x = this.pos_x + (this.b / 2);
-        this.sp_y = this.pos_y + (this.h / 2);
+        this.sp_x = this.pos_x + (this.b / 2.0);
+        this.sp_y = this.pos_y + (this.h / 2.0);
     }
 
 }

@@ -26,11 +26,9 @@ public class kreis extends form {
         this.r = r;
         this.pos_x = x;
         this.pos_y = y;
+        this.a_max = 2;
 
-        area();
-        sp();
-        fltm();
-        wdsm(2);
+        update();
     }
 
     @Override
@@ -41,8 +39,8 @@ public class kreis extends form {
 
     @Override
     void fltm() {
-        this.i_x = (PI * Math.pow(r * 2, 4)) / 64;
-        this.i_y = (PI * Math.pow(r * 2, 4)) / 64;
+        this.i_x = (PI * Math.pow(r * 2.0, 4)) / 64.0;
+        this.i_y = (PI * Math.pow(r * 2.0, 4)) / 64.0;
     }
 
     @Override
