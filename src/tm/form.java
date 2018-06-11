@@ -26,6 +26,8 @@ public abstract class form {
     double a_max;
     
     double area;
+    
+    double multi = 1; //Als Multiplyer mit -1
 
     /**
      * Berechnet die Fläche der Form neu! Sollte vor dem Zugriff auf this.area

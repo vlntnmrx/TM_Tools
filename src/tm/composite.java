@@ -42,7 +42,7 @@ public class composite extends form {
     double area() {
         double ar = 0;
         for (int i = 0; i < elements.size(); i++) {
-            ar += elements.get(i).area;
+            ar += elements.get(i).area * elements.get(i).multi;
         }
         this.area = ar;
         return this.area;
@@ -53,10 +53,10 @@ public class composite extends form {
         double ix = 0, iy = 0;
 
         for (int i = 0; i < this.elements.size(); i++) {
-            ix += elements.get(i).i_x + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_x - this.sp_x, 2));
+            ix += (elements.get(i).i_x + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_x - this.sp_x, 2))) * elements.get(i).multi;
         }
         for (int i = 0; i < this.elements.size(); i++) {
-            iy += elements.get(i).i_y + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_y - this.sp_y, 2));
+            iy += (elements.get(i).i_y + (elements.get(i).area() * Math.pow(this.elements.get(i).sp_y - this.sp_y, 2))) * elements.get(i).multi;
         }
 
         this.i_x = ix;
@@ -70,20 +70,20 @@ public class composite extends form {
         s1 = 0;
         ages = 0;
         for (int i = 0; i < elements.size(); i++) {
-            s1 += elements.get(i).sp_x * elements.get(i).area();
+            s1 += elements.get(i).sp_x * elements.get(i).area() * elements.get(i).multi;
         }
         for (int i = 0; i < elements.size(); i++) {
-            ages += elements.get(i).area();
+            ages += elements.get(i).area() * elements.get(i).multi;
         }
         this.sp_x = s1 / ages;
 
         s1 = 0;
         ages = 0;
         for (int i = 0; i < elements.size(); i++) {
-            s1 += elements.get(i).sp_y * elements.get(i).area();
+            s1 += elements.get(i).sp_y * elements.get(i).area() * elements.get(i).multi;
         }
         for (int i = 0; i < elements.size(); i++) {
-            ages += elements.get(i).area();
+            ages += elements.get(i).area() * elements.get(i).multi;
         }
         this.sp_y = s1 / ages;
     }

@@ -13,7 +13,9 @@ import static java.lang.Math.*;
  *
  * @author tomat
  */
-public class kreis_halb extends kreis {
+public class kreis_halb extends form {
+
+    double r;
 
     /**
      * Funktioniert wie Kreis, nur halt halb
@@ -21,9 +23,25 @@ public class kreis_halb extends kreis {
      * @param r Radius
      * @param x x-Koordinate
      * @param y y-Koordinate
+     * @param cut
      */
+    public kreis_halb(double r, double x, double y, boolean cut) {
+        if (cut) {
+            this.multi = -1;
+        }
+        this.r = r;
+        this.pos_x = x;
+        this.pos_y = y;
+        this.a_max = (1 - (4 / (3 * PI)));
+        update();
+    }
+
     public kreis_halb(double r, double x, double y) {
-        super(r, x, y);
+        this.r = r;
+        this.pos_x = x;
+        this.pos_y = y;
+        this.a_max = (1 - (4 / (3 * PI)));
+        update();
     }
 
     @Override
@@ -35,13 +53,13 @@ public class kreis_halb extends kreis {
     @Override
     void fltm() {
         this.i_x = ((PI / 8.0) - (8.0 / (9.0 * PI))) * Math.pow(r, 4);
-        this.i_y = 0;
+        this.i_y = 0.049 * Math.pow(r, 4);
     }
 
     @Override
     void sp() {
         this.sp_x = this.pos_x;
-        this.sp_y = (4 * this.r) / (3.0 * PI);
+        this.sp_y = this.pos_y + (4.0 * this.r) / (3.0 * PI);
     }
 
 }

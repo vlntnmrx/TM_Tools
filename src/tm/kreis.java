@@ -26,7 +26,7 @@ public class kreis extends form {
         this.r = r;
         this.pos_x = x;
         this.pos_y = y;
-        this.a_max = 2;
+        this.a_max = 0.5;
 
         update();
     }

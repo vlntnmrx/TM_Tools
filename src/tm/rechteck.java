@@ -28,7 +28,7 @@ public class rechteck extends form {
         this.pos_y = y;
         this.b = b;
         this.h = h;
-        this.a_max = 2.0;
+        this.a_max = 0.5;
         
         update();
     }
